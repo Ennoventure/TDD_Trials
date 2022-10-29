@@ -22,3 +22,11 @@ working and practicing on TDD and pytest
 ### Hint
     This kata lures a lot of people to implement features in the order of the numbers. But do not forget that it’s sometimes easier to start with a general case and add exceptions later.
 
+
+#### Solution
+    RomanNumeralsConverter.roman_converter(number) (from src/roman_number_converter.py)
+    This method will help to generate the roman numberal of any integer value provided.
+
+
+###### Note: This converter will generate numbers from only 1 to 3999
+
