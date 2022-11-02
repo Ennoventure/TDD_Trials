@@ -1,24 +1,12 @@
+import sys
+sys.path.append("..")
 from config.config import special_nums
 
 
 class RomanNumeralsConverter():
     
-    
-    special_nums = {
-    1 : "I",
-    5 : "V",
-    10 : "X",
-    40 : "XL",
-    50 : "L",
-    90 : "XC",
-    100 : "C",
-    400 : "CD",
-    500 : "D",
-    900 : "CM",
-    1000 : "M"
-}
 
-    def roman_converter(number):
+    def roman_converter(self, number):
         roman_letter = ""
         
         if (number > 4000) or (number <= 0):
@@ -72,12 +60,13 @@ class RomanNumeralsConverter():
             number = number -  5
 
         roman_letter = roman_letter + (number * special_nums[1])
-        return roman_letter
+        return str(roman_letter)
     
 if __name__ == "__main__":
-    number = 3999
+    number = 21
+    roman_converter_obj = RomanNumeralsConverter()
     try:
-        roman_letter = roman_converter(number)
+        roman_letter = roman_converter_obj.roman_converter(number)
         print("Converted Roman Numberal: ", number, "->",roman_letter)
     except Exception as e:
         print("Error:", str(e))
