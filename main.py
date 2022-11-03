@@ -1,5 +1,3 @@
-from typing import Union
-
 from fastapi import FastAPI
 import uvicorn
 
@@ -14,7 +12,7 @@ def read_root():
 
 
 @app.get("/roman_converter/{integer_number}")
-def read_item(integer_number: int, Converted_Roman_Numberal: Union[str, None] = None):
+def read_item(integer_number: int, Converted_Roman_Numberal: str):
     roman_converter_obj = RomanNumeralsConverter()
     roman_letter = roman_converter_obj.roman_converter(integer_number)
     return {"integer_number": integer_number, "converted_roman_numberal": roman_letter}
